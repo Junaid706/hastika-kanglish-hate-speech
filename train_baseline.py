@@ -111,28 +111,28 @@ if __name__ == "__main__":
     results = []
 
     results.append(run_task(
-        train_path="/mnt/user-data/uploads/binary_train.csv",
-        val_inputs_path="/mnt/user-data/uploads/binary_validation_inputs.csv",
+        train_path="binary_train.csv",
+        val_inputs_path="binary_validation_inputs.csv",
         text_col="Comment",
         label_col="Label",
         id_col="id",
         out_pred_col="Label",
-        submission_path="/home/claude/hastika/binary_predictions.csv",
+        submission_path="binary_predictions.csv",
         report_name="Task A - Binary Hate Speech Detection"
     ))
 
     results.append(run_task(
-        train_path="/mnt/user-data/uploads/multiclass_train.csv",
-        val_inputs_path="/mnt/user-data/uploads/multiclass_validation_inputs.csv",
+        train_path="multiclass_train.csv",
+        val_inputs_path="multiclass_validation_inputs.csv",
         text_col="Comment",
         label_col="Hate Category",
         id_col="id",
         out_pred_col="Hate Category",
-        submission_path="/home/claude/hastika/multiclass_predictions.csv",
+        submission_path="multiclass_predictions.csv",
         report_name="Task B - Fine-Grained Hate Speech Classification"
     ))
 
-    with open("/home/claude/hastika/results_summary.json", "w") as f:
+    with open("results_summary.json", "w") as f:
         json.dump(results, f, indent=2)
 
     print("\n\nSummary:")
